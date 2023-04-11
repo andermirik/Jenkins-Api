@@ -1,0 +1,49 @@
+pipeline {
+    agent {
+        label 'agent-label'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git credentialsId: 'gitlab-credentials-id',
+                url: 'https://git.ityce4ka.ru/andermirik/nir.git'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh 'pytest'
+            }
+        }
+
+        stage('Static Code Analysis') {
+            steps {
+                sh 'flake8'
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t image-name .'
+            }
+        }
+
+        stage('Push Docker Image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'docker-credentials-id',
+                 usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    sh 'docker login -u $DOCKER_USER -p $DOCKER_PASS docker-registry'
+                }
+                sh 'docker push docker-registry/image-name:latest'
+            }
+        }
+
+        stage('Deploy to Agent') {
+            steps {
+                sh 'docker pull docker-registry/image-name:latest'
+                sh 'docker-compose up -d'
+            }
+        }
+    }
+}
