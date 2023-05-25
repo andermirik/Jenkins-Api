@@ -1,0 +1,67 @@
+version: '2.0'
+
+intents:
+  - get_server_info
+  - get_all_jobs
+  - get_job_info
+  - start_job
+  - stop_job
+  - get_builds_list
+  - get_build_info
+
+entities:
+  - job_name:
+    type: regex
+    regex: '[а-яеЁА-Яa-zA-Z0-9]+'
+  - build_number:
+    type: regex
+    regex: '[0-9]+'
+  - parameter_name:
+     type: regex
+     regex: '[а-яеЁА-Яa-zA-Z0-9]+'
+
+slots:
+  job_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: job_name
+  build_number:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: build_number
+  parameter_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: parameter_name
+
+responses:
+  utter_greet:
+    - text: Привет! Как я могу вам помочь сегодня?
+  
+  utter_goodbye:
+    - text: До свидания! Если вам понадобится помощь, обращайтесь.
+  
+  utter_job_info:
+    - text: Информация о задаче {job_name} статус - {status}, последняя сборка - {last_build}, следующая сборка - {next_build}.
+  
+  utter_job_list:
+    - text: Вот список всех задач {jobs_list}.
+  
+  utter_build_started:
+    - text: Сборка задачи {job_name} была успешно запущена.
+
+  utter_build_stopped:
+    - text: Сборка задачи {job_name} была успешно остановлена.
+
+
+actions:
+  - get_server_info
+  - get_all_jobs
+  - get_job_info
+  - start_job
+  - stop_job
+  - get_builds_list
+  - get_build_info

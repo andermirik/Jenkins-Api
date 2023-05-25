@@ -1,0 +1,551 @@
+version: "3.1"
+
+nlu:
+- intent: get_server_info
+  examples: |
+    - Покажи мне информацию о сервере Jenkins
+    - Какая информация о сервере?
+    - Можешь дать мне информацию о сервере Jenkins?
+    - Информация о сервере Jenkins
+    - Вся инфа о сервере
+    - Давай данные о сервере
+    - Что по серверу Jenkins?
+    - Расскажи о сервере Jenkins
+    - Хочу узнать об сервере
+    - Инфа про сервер, пожалуйста
+    - Какие данные о сервере?
+    - Что знаешь о сервере Jenkins?
+    - Покажи состояние сервера
+    - Как дела у сервера Jenkins?
+    - Дай инфу о сервере
+    - Все подробности о сервере
+    - Что с сервером Jenkins?
+    - Статус сервера Jenkins
+    - Нужна инфа о сервере
+    - Что происходит с сервером?
+    - Вся информация о сервере
+    - Расскажи про сервер Jenkins
+    - Отобрази данные о сервере
+    - Что нового на сервере Jenkins?
+    - Какие новости у сервера?
+    - Покажи мне сервер Jenkins
+    - Хочу информацию о сервере
+    - Что там на сервере Jenkins?
+    - Все данные о сервере
+    - Информация о сервере, пожалуйста
+    - О сервере Jenkins
+    - Подробности о сервере
+    - Дай мне инфу про сервер
+    - Что ты знаешь о сервере?
+    - Сервер Jenkins и его состояние
+    - Все о сервере Jenkins
+    - Расскажи мне о сервере
+    - Что там с сервером?
+    - Как обстоят дела у сервера?
+    - Инфа о сервере Jenkins
+    - Сервер Jenkins: что там?
+    - Какие данные по серверу?
+    - Давай обсудим сервер
+
+
+- intent: get_all_jobs
+  examples: |
+    - Покажи мне список всех джоб
+    - Получить список всех задач
+    - Можешь показать мне все джобы?
+    - Перечислить все задачи Jenkins
+    - Все джобы на экран
+    - Отобрази все задачи
+    - Выведи все активные джобы
+    - Хочу увидеть список всех задач
+    - Покажи мне все текущие джобы
+    - Дай мне полный список задач
+    - Какие задачи сейчас активны?
+    - Что у нас есть в списке джоб?
+    - Все джобы, пожалуйста
+    - Хочу список всех джоб
+    - Какие джобы сейчас работают?
+    - Вывести все задачи на экран
+    - Покажи список всех джоб
+    - Все доступные задачи
+    - Какие джобы сейчас в очереди?
+    - Показать список всех джоб
+    - Задачи, которые идут сейчас
+    - Отобразить все джобы
+    - Мне нужен список всех задач
+    - Что у нас в списке задач?
+    - Все джобы в системе
+    - Хочу увидеть все джобы
+    - Покажи мне активные задачи
+    - Какие задачи сейчас в работе?
+    - Что у нас сейчас по джобам?
+    - Все текущие задачи
+    - Отобразить список всех джоб
+    - Перечислить все джобы
+    - Все джобы в процессе
+    - Мне нужны все джобы
+    - Какие задачи сейчас идут?
+    - Вывести список всех джоб
+    - Все активные задачи
+    - Показать все задачи
+    - Что сейчас происходит с джобами?
+    - Список всех джоб на данный момент
+
+
+- intent: get_job_info
+  examples: |
+    - Покажи мне информацию о задаче [test_job](job_name)
+    - Какая информация о задаче [example_job](job_name)?
+    - Можешь дать мне информацию о задаче [sample_job](job_name)?
+    - Информация о задаче [my_job](job_name)
+    - Что происходит с задачей [deploy_prod](job_name)?
+    - В каком состоянии задача [build_pipeline](job_name)?
+    - Мне нужны подробности о задаче [merge_request](job_name)
+    - Дай мне данные о задаче [test_suite](job_name)
+    - Каков статус задачи [feature_branch](job_name)?
+    - Расскажи мне об успешности задачи [main_project](job_name)
+    - Получи информацию о задаче [Сборка](job_name)
+    - Расскажи о задаче [Тестирование](job_name)
+    - Что происходит с задачей [Деплой](job_name)
+    - Дай мне данные о задаче [Оптимизация](job_name)
+
+    - Что по джобе [backend_update](job_name)?
+    - Джоба [migrate_data](job_name), как обстоят дела?
+    - Инфа о джобе [api_fix](job_name), пожалуйста
+    - Дай мне инфу о джобе [performance_test](job_name)
+    - Что нового в джобе [ui_redesign](job_name)?
+    - Покажи информацию по джобе [database_cleanup](job_name)
+    - Как идет [code_review](job_name) джоба?
+    - В каком состоянии джоб [optimize_images](job_name)?
+    - Что происходит с джобой [rollback_changes](job_name)?
+    - Инфа о [server_maintenance](job_name) джобе?
+    - Состояние джобы [bugfixing](job_name), пожалуйста
+    - Как успехи у джоба [deployment](job_name)?
+    - Что происходит в задаче [app_update](job_name)?
+    - Можешь рассказать о джобе [security_patch](job_name)?
+    - Как идут дела с [new_feature](job_name) джобой?
+    - Покажи мне инфу о [refactoring](job_name) джобе
+    - Что случилось с джобой [load_testing](job_name)?
+    - Дай мне данные о [rollback](job_name) джобе
+    - Как продвигается джоба [unit_tests](job_name)?
+    - Что с джобой [frontend_changes](job_name)?
+    - Как идет работа над джобой [new_module](job_name)?
+    - Дай мне информацию о джобе [data_migration](job_name)
+    - Расскажи мне о джобе [app_refactor](job_name)
+    - Какие новости по джобе [cache_optimization](job_name)?
+    - Как обстоят дела с джобой [error_fixing](job_name)?
+    - Что по джобе [integration_tests](job_name)?
+    - Как продвигается задача [code_optimization](job_name)?
+    - Дай мне инфу о джобе [mobile_app](job_name)
+    - Как идут дела у задачи [app_monitoring](job_name)?
+    - Что нового в джобе [responsive_design](job_name)?
+    - Можешь рассказать о задаче [app_debug](job_name)?
+    - Какова ситуация с джобой [beta_testing](job_name)?
+    - Что происходит в джобе [server_upgrade](job_name)?
+    - Что случилось с задачей [bug_squashing](job_name)?
+    - Как идет работа по джобе [performance_tuning](job_name)?
+
+    - Что по джобе [обновление_бэкенда](job_name)?
+    - Джоба [миграция_данных](job_name), как обстоят дела?
+    - Инфа о джобе [исправление_api](job_name), пожалуйста
+    - Дай мне инфу о джобе [тестирование_производительности](job_name)
+    - Что нового в джобе [переделка_интерфейса](job_name)?
+    - Покажи информацию по джобе [очистка_базы_данных](job_name)
+    - Как идет [ревью_кода](job_name) джоба?
+    - В каком состоянии джоб [оптимизация_изображений](job_name)?
+    - Что происходит с джобой [откат_изменений](job_name)?
+    - Инфа о [техническое_обслуживание_сервера](job_name) джобе?
+    - Состояние джобы [исправление_ошибок](job_name), пожалуйста
+    - Как успехи у джоба [развертывание](job_name)?
+    - Что происходит в задаче [обновление_приложения](job_name)?
+    - Можешь рассказать о джобе [защитный_патч](job_name)?
+    - Как идут дела с [новая_функция](job_name) джобой?
+    - Покажи мне инфу о [рефакторинг](job_name) джобе
+    - Что случилось с джобой [нагрузочное_тестирование](job_name)?
+    - Дай мне данные о [откат](job_name) джобе
+    - Как продвигается джоба [модульные_тесты](job_name)?
+    - Что с джобой [изменения_фронтенда](job_name)?
+    - Как идет работа над джобой [новый_модуль](job_name)?
+    - Дай мне информацию о джобе [миграция_данных](job_name)
+    - Расскажи мне о джобе [рефактор_приложения](job_name)
+    - Какие новости по джобе [оптимизация_кэша](job_name)?
+    - Как обстоят дела с джобой [исправление_ошибок](job_name)?
+    - Что по джобе [интеграционные_тесты](job_name)?
+    - Как продвигается задача [оптимизация_кода](job_name)?
+    - Дай мне инфу о джобе [мобильное_приложение](job_name)
+    - Как идут дела у задачи [мониторинг_приложения](job_name)?
+    - Что нового в джобе [адаптивный_дизайн](job_name)?
+    - Можешь рассказать о задаче [отладка_приложения](job_name)?
+    - Какова ситуация с джобой [бета_тестирование](job_name)?
+    - Что происходит в джобе [обновление_сервера](job_name)?
+    - Что случилось с задачей [устранение_ошибок](job_name)?
+    - Как идет работа по джобе [настройка_производительности](job_name)?
+    - Можешь показать информацию о задаче [доработка_функционала](job_name)?
+    - Что нового в джобе [автоматизация_процессов](job_name)?
+    - Покажи мне информацию о джобе [создание_отчетов](job_name)
+    - Как идет джоба [поддержка_системы](job_name)?
+    - В каком состоянии джоб [анализ_данных](job_name)?
+    - Что происходит с джобой [разработка_плагина](job_name)?
+    - Инфа о [настройка_безопасности](job_name) джобе?
+    - Состояние джобы [разработка_интерфейса](job_name), пожалуйста
+    - Как успехи у джоба [интеграция_сервисов](job_name)?
+    - Что происходит в задаче [автоматизация_тестирования](job_name)?
+    - Можешь рассказать о джобе [создание_базы_данных](job_name)?
+    - Как идут дела с [оптимизация_запросов](job_name) джобой?
+
+- intent: trigger_job_build
+  examples: |
+    - Запусти сборку задачи [test_job](job_name)
+    - Запустить сборку для задачи [example_job](job_name)
+    - Начни сборку задания [sample_job](job_name)
+    - Прошу запустить задачу [my_job](job_name)
+    - Пожалуйста, запусти сборку задачи [deploy_prod](job_name)
+    - Инициировать сборку Job [build_pipeline](job_name)
+    - Требуется запуск задачи [merge_request](job_name)
+    - Запустить сборку задачи [test_suite](job_name)
+    - Запустите сборку для [feature_branch](job_name)
+    - Запуск сборки для [main_project](job_name)
+    - Запустите сборку задачи [Сборка](job_name)
+    - Запустить задачу [Тестирование](job_name)
+    - Запустите задачу [Деплой](job_name)
+    - Запуск сборки [Оптимизация](job_name)
+    - Начать сборку джоба [backend_update](job_name)
+    - Запустить джобу [migrate_data](job_name)
+    - Инициировать сборку джоба [api_fix](job_name)
+    - Запустить сборку джоба [performance_test](job_name)
+    - Запустите сборку джоба [ui_redesign](job_name)
+    - Запустите сборку джоба [database_cleanup](job_name)
+    - Запусти джобку [test_job](job_name), а то висит
+    - Погнали сборку [example_job](job_name), пора уже
+    - Давай жги сборку [sample_job](job_name), не тормози
+    - Ну что, запускаем задачу [my_job](job_name)?
+    - Бахни сборку [deploy_prod](job_name), пора
+    - Давай-ка собери [build_pipeline](job_name), не тяни
+    - Кати сборку [merge_request](job_name), пора обновить
+    - Включи сборку [test_suite](job_name), чего ждем?
+    - Пора дернуть за веревочку сборки [feature_branch](job_name)
+    - Хватит валять дурака, запускай [main_project](job_name)
+    - Поехали с сборкой [Сборка](job_name), а то забыли
+    - Давай собирать [Тестирование](job_name), настало время
+    - Пора собрать [Деплой](job_name), надоело ждать
+    - Ну че, когда сборка [Оптимизация](job_name)?
+    - Врубай джобу [backend_update](job_name), не медли
+    - Давай прокатим сборку [migrate_data](job_name)
+    - Ну что, го собирать [api_fix](job_name)?
+    - Когда уже джоба [performance_test](job_name) полетит?
+    - Давай-ка рванем с сборкой [ui_redesign](job_name)
+    - Запусти, братан, сборку [database_cleanup](job_name)
+    - Го собирать [report_generator](job_name), не тормози
+    - Поехали с сборкой [deployment_pipeline](job_name), пора обновиться
+    - Запускай задачу [fix_bugs](job_name), надоело ждать
+    - Ну че, когда жахнем [release_candidate](job_name)?
+    - Бахни джобу [data_migration](job_name), пора уже
+    - Запусти-ка сборку [code_review](job_name), а то забыли
+    - Врубай сборку [unit_tests](job_name), время пришло
+    - Хватит мешкать, запускай [integration_tests](job_name)
+    - Давай прокатим джобу [security_tests](job_name), не тяни
+    - Включай сборку [performance_testing](job_name), надоело ждать
+    - Кати сборку [artifact_upload](job_name), пора
+    - Пора погнать джобку [nightly_build](job_name), а то висит
+    - Давай-ка рванем с задачей [release_notes](job_name)
+    - Запусти, чувак, сборку [hotfix](job_name)
+    - Включи джобу [staging_deploy](job_name), чего ждем?
+    - Ну че, когда запускаем [production_deploy](job_name)?
+    - Го собирать [rollback](job_name), надоело ждать
+    - Бахни задачу [monitoring_check](job_name), пора уже
+    - Погнали с сборкой [error_handling](job_name), не тормози
+    - Запускай джобу [bug_fixes](job_name), пора обновиться
+    - Запускай задачу [Тестирование_функций](job_name), пора уже
+    - Го запустим джобу [Сборка_приложения](job_name), не тормози
+    - Врубай [Обновление_базы](job_name), надоело ждать
+    - Бахни задачу [Проверка_безопасности](job_name), а то висит
+    - Давай прокатим джобу [Оптимизация_кода](job_name), пора обновиться
+    - Включай сборку [Деплой_на_прод](job_name), чего ждем?
+    - Пора погнать джобку [Обработка_запросов](job_name), время пришло
+    - Хватит мешкать, запускай [Интеграция_сервисов](job_name)
+    - Давай-ка рванем с задачей [Контроль_качества](job_name)
+    - Го собирать [Развертывание_стенда](job_name), не тяни
+    - Запусти, чувак, сборку [Рефакторинг](job_name)
+    - Ну че, когда жахнем [Автотесты](job_name)?
+    - Поехали с сборкой [Мониторинг_серверов](job_name), надоело ждать
+    - Бахни джобу [Анализ_логов](job_name), пора уже
+    - Включи задачу [Поддержка_системы](job_name), а то забыли
+    - Запускай сборку [Публикация_документации](job_name), не тормози
+    - Погнали с джобой [Синхронизация_данных](job_name), пора обновиться
+    - Кати сборку [Обновление_компонентов](job_name), чего ждем?
+    - Врубай джобу [Разработка_нового_функционала](job_name), а то висит
+    - Хватит мешкать, запусти [Тестирование_производительности](job_name)
+
+- intent: stop_job_build
+  examples: |
+    - Останови сборку задачи [test_job](job_name) номер [42](build_number)
+    - Прервать сборку для задачи [example_job](job_name) с номером [123](build_number)
+    - Остановить процесс сборки [sample_job](job_name) номер [99](build_number)
+    - Прекратить выполнение задачи [my_job](job_name) с номером сборки [456](build_number)
+    - Останови работу над задачей [deploy_prod](job_name) с номером [37](build_number)
+    - Прерви сборку задачи [build_pipeline](job_name) номер [222](build_number)
+    - Заверши выполнение задачи [merge_request](job_name) с номером сборки [88](build_number)
+    - Остановить джоб [test_suite](job_name) номер [77](build_number)
+    - Прекрати выполнение задачи [feature_branch](job_name) номер [15](build_number)
+    - Остановить сборку для задачи [main_project](job_name) с номером [100](build_number)
+    - Останови сборку задачи [frontend_update](job_name) номер [150](build_number)
+    - Прекрати выполнение задачи [data_migration](job_name) с номером сборки [67](build_number)
+    - Заверши джобу [bug_fixing](job_name) номер [289](build_number)
+    - Останови сборку джоба [code_review](job_name) с номером [16](build_number)
+    - Заверши сборку задачи [server_upgrade](job_name) номер [301](build_number)
+    - Прервать выполнение задачи [log_analysis](job_name) с номером сборки [24](build_number)
+    - Остановить джоб [module_refactoring](job_name) номер [55](build_number)
+    - Заверши выполнение джобы [ui_testing](job_name) с номером [19](build_number)
+    - Прекратить работу над задачей [feature_development](job_name) номер [214](build_number)
+    - Останови сборку джоба [webhook_setup](job_name) с номером [130](build_number)
+    - Заверши джобу [framework_update](job_name) номер [90](build_number)
+    - Остановить выполнение задачи [stats_collection](job_name) с номером сборки [44](build_number)
+    - Прервать работу над джобой [tech_integration](job_name) номер [76](build_number)
+    - Останови сборку задачи [compatibility_check](job_name) с номером [33](build_number)
+    - Заверши джоб [service_monitoring](job_name) номер [299](build_number)
+    - Прекратить выполнение джобы [automation_process](job_name) с номером [45](build_number)
+    - Остановить работу над джобой [code_documentation](job_name) номер [27](build_number)
+    - Заверши выполнение джобы [security_enhancement](job_name) с номером [301](build_number)
+    - Останови джобу [performance_analysis](job_name) номер [75](build_number)
+    - Заткнуть джобу [service_implementation](job_name) с номером [11](build_number)
+    - Остановить сборку задачи [load_testing](job_name) номер [99](build_number)
+    - Заверши джоб [query_optimization](job_name) с номером [49](build_number)
+    - Прервать выполнение джобы [database_integration](job_name) с номером [64](build_number)
+    - Останови сборку задачи [template_development](job_name) номер [105](build_number)
+    - Заверши джоб [server_configuration](job_name) с номером [71](build_number)
+    - Остановить выполнение задачи [client_support](job_name) номер [20](build_number)
+    - Прекратить работу над джобой [security_analysis](job_name) с номером [12](build_number)
+
+- intent: get_builds_list
+  examples: |
+    - Покажи мне список сборок для задачи [test_job](job_name)
+    - Какие сборки есть у задачи [example_job](job_name)?
+    - Можешь дать список сборок для задачи [sample_job](job_name)?
+    - Список сборок задачи [my_job](job_name)
+    - Посмотреть сборки для задачи [deploy_prod](job_name)
+    - Какие сборки есть у задачи [build_pipeline](job_name)?
+    - Мне нужен список сборок для задачи [merge_request](job_name)
+    - Дай мне список сборок задачи [test_suite](job_name)
+    - Какие сборки у задачи [feature_branch](job_name)?
+    - Расскажи мне о сборках задачи [main_project](job_name)
+    - Получи список сборок для задачи [Сборка](job_name)
+    - Расскажи о сборках задачи [Тестирование](job_name)
+    - Что происходит с сборками задачи [Деплой](job_name)
+    - Дай мне данные о сборках задачи [Оптимизация](job_name)
+
+    - Что по сборкам джобы [backend_update](job_name)?
+    - Джоба [migrate_data](job_name), какие сборки есть?
+    - Инфа о сборках джобы [api_fix](job_name), пожалуйста
+    - Дай мне инфу о сборках джобы [performance_test](job_name)
+    - Что нового в сборках джобы [ui_redesign](job_name)?
+    - Покажи информацию по сборкам джобы [database_cleanup](job_name)
+
+    - Какие сборки у джобы [новая_фича](job_name)?
+    - Покажи список сборок для [база_данных](job_name)
+    - Что там по сборкам задачи [перенос_сервера](job_name)?
+    - Посмотри сборки для задачи [оптимизация_кода](job_name)
+    - Мне нужны сборки для [мониторинг](job_name)
+    - Расскажи обо всех сборках джобы [тестовый_проект](job_name)
+    - Зайди в сборки джобы [автоматизация](job_name)
+    - Проверь сборки для задачи [рефакторинг](job_name)
+    - Дай список сборок для задачи [обновление_бэкенда](job_name)
+    - Покажи сборки джобы [масштабирование](job_name)
+    - Какие сборки есть у джобы [выкатка](job_name)?
+    - Как обстоят дела с сборками у [глобальное_обновление](job_name)?
+    - Найди сборки для задачи [багфикс](job_name)
+    - Дай обзор сборок джобы [интеграция_сервисов](job_name)
+    - В каком состоянии сборки джобы [безопасность](job_name)?
+    - Посмотри последние сборки для [мобильное_приложение](job_name)
+    - Какие сборки прошли у задачи [релиз](job_name)?
+    - Мне нужны все сборки задачи [горячий_фикс](job_name)
+    - Покажи мне сборки джобы [веб_приложение](job_name)
+    - Какие сборки были у задачи [удаление_багов](job_name)?
+    - Что там с сборками для джобы [фронтенд_обновление](job_name)?
+    - Покажи все сборки задачи [синхронизация_данных](job_name)
+    - Посмотри сборки для джобы [бот_поддержки](job_name)
+    - Дай список сборок для [локализация](job_name)
+    - Какие сборки у джобы [графический_дизайн](job_name)?
+    - Расскажи о сборках задачи [маркетинг](job_name)
+    - Зайди в сборки джобы [аналитика](job_name)
+    - Проверь сборки для задачи [социальные_сети](job_name)
+    - Дай обзор сборок задачи [контент](job_name)
+    - Покажи сборки для джобы [создание_игры](job_name)
+    - Какие сборки есть у джобы [виртуальная_реальность](job_name)?
+    - Как обстоят дела с сборками у [голосовые_технологии](job_name)?
+    - Найди сборки для задачи [искусственный_интеллект](job_name)
+    - Дай обзор сборок джобы [разработка_приложений](job_name)
+    - В каком состоянии сборки джобы [оптимизация_поиска](job_name)?
+    - Посмотри последние сборки для [блокчейн](job_name)
+    - Какие сборки прошли у задачи [разработка_сайтов](job_name)?
+    - Мне нужны все сборки задачи [виртуальные_ассистенты](job_name)
+    - Покажи мне сборки джобы [облачные_технологии](job_name)
+    - Какие сборки были у задачи [кибербезопасность](job_name)?
+    - Что там по сборкам у [разработка_чат-ботов](job_name)?
+    - Можешь показать сборки для задачи [IoT](job_name)?
+    - Найти сборки джобы [автоматизация_тестирования](job_name)
+    - В каком состоянии сборки у [адаптивный_дизайн](job_name)?
+    - Покажи список сборок джобы [стриминг](job_name)
+    - Все сборки задачи [геймификация](job_name), пожалуйста
+    - Что происходит с сборками у [машинное_обучение](job_name)
+
+
+- intent: get_build_info
+  examples: |
+    - Покажи мне информацию о сборке [123](build_number) задачи [test_job](job_name)
+    - Какая информация о сборке [456](build_number) задачи [example_job](job_name)?
+    - Можешь дать мне информацию о сборке [789](build_number) задачи [sample_job](job_name)?
+    - Информация о сборке [321](build_number) задачи [my_job](job_name)
+    - Что происходит с сборкой [654](build_number) задачи [deploy_prod](job_name)?
+    - В каком состоянии сборка [987](build_number) задачи [build_pipeline](job_name)?
+    - Мне нужны подробности о сборке [135](build_number) задачи [merge_request](job_name)
+    - Дай мне данные о сборке [246](build_number) задачи [test_suite](job_name)
+    - Каков статус сборки [369](build_number) задачи [feature_branch](job_name)?
+    - Расскажи мне об успешности сборки [1234](build_number) задачи [main_project](job_name)
+    - Получи информацию о сборке [5678](build_number) задачи [Сборка](job_name)
+    - Расскажи о сборке [91011](build_number) задачи [Тестирование](job_name)
+    - Что происходит с сборкой [1213](build_number) задачи [Деплой](job_name)
+    - Дай мне данные о сборке [1415](build_number) задачи [Оптимизация](job_name)
+
+    - Что по сборке [1617](build_number) джобы [backend_update](job_name)?
+    - Сборка [1819](build_number) джобы [migrate_data](job_name), как обстоят дела?
+    - Инфа о сборке [2021](build_number) джобы [api_fix](job_name), пожалуйста
+    - Дай мне инфу о сборке [2223](build_number) джобы [performance_test](job_name)
+    - Что нового в сборке [2425](build_number) джобы [ui_redesign](job_name)?
+    - Покажи информацию по сборке [2627](build_number) джобы [database_cleanup](job_name)
+    - Расскажи мне о сборке [3000](build_number) для задачи [data_migration](job_name)
+    - Что можешь сказать о сборке [3100](build_number) задачи [front_end_update](job_name)?
+    - Дай мне инфу о сборке [3200](build_number) джобы [security_fix](job_name)
+    - Что нового в сборке [3300](build_number) задачи [bug_squash](job_name)?
+    - Какие данные у сборки [3400](build_number) джобы [integration_tests](job_name)?
+    - Информация о сборке [3500](build_number) задачи [code_refactoring](job_name), пожалуйста
+    - Как обстоят дела с сборкой [3600](build_number) джобы [load_testing](job_name)?
+    - Что по сборке [3700](build_number) задачи [performance_improvement](job_name)?
+    - Покажи мне состояние сборки [3800](build_number) джобы [new_feature](job_name)
+    - Как успехи у сборки [3900](build_number) задачи [roll_back](job_name)?
+    - Дай мне информацию о сборке [4000](build_number) джобы [report_generation](job_name)
+    - Что происходит с сборкой [4100](build_number) задачи [code_review](job_name)?
+    - Какие подробности о сборке [4200](build_number) джобы [unit_tests](job_name)?
+    - Каков статус сборки [4300](build_number) задачи [code_optimization](job_name)?
+    - Расскажи об успешности сборки [4400](build_number) джобы [client_demo](job_name)
+    - Получи информацию о сборке [4500](build_number) задачи [server_update](job_name)
+    - Что там с сборкой [4600](build_number) джобы [system_upgrade](job_name)?
+    - Дай мне данные о сборке [4700](build_number) задачи [environment_setup](job_name)
+    - Что происходит со сборкой [4800](build_number) джобы [deployment](job_name)?
+    - Какие новости по сборке [4900](build_number) задачи [cache_clear](job_name)?
+
+    - Как там сборка [5000](build_number) для джобы [Анализ_безопасности](job_name)?
+    - Сборка [5100](build_number) задачи [Обновление_БД](job_name), что нового?
+    - Что можешь сказать о сборке [5200](build_number) джобы [Проверка_кода](job_name)?
+    - Расскажи мне о сборке [3000](build_number) для задачи [data_migration](job_name)
+    - Что можешь сказать о сборке [3100](build_number) задачи [front_end_update](job_name)?
+    - Дай мне инфу о сборке [3200](build_number) джобы [security_fix](job_name)
+    - Что нового в сборке [3300](build_number) задачи [bug_squash](job_name)?
+    - Какие данные у сборки [3400](build_number) джобы [integration_tests](job_name)?
+    - Информация о сборке [3500](build_number) задачи [code_refactoring](job_name), пожалуйста
+    - Как обстоят дела с сборкой [3600](build_number) джобы [load_testing](job_name)?
+    - Что по сборке [3700](build_number) задачи [performance_improvement](job_name)?
+    - Покажи мне состояние сборки [3800](build_number) джобы [new_feature](job_name)
+    - Как успехи у сборки [3900](build_number) задачи [roll_back](job_name)?
+    - Дай мне информацию о сборке [4000](build_number) джобы [report_generation](job_name)
+    - Что происходит с сборкой [4100](build_number) задачи [code_review](job_name)?
+    - Какие подробности о сборке [4200](build_number) джобы [unit_tests](job_name)?
+    - Каков статус сборки [4300](build_number) задачи [code_optimization](job_name)?
+    - Расскажи об успешности сборки [4400](build_number) джобы [client_demo](job_name)
+    - Получи информацию о сборке [4500](build_number) задачи [server_update](job_name)
+    - Что там с сборкой [4600](build_number) джобы [system_upgrade](job_name)?
+    - Дай мне данные о сборке [4700](build_number) задачи [environment_setup](job_name)
+    - Что происходит со сборкой [4800](build_number) джобы [deployment](job_name)?
+    - Какие новости по сборке [4900](build_number) задачи [cache_clear](job_name)?
+
+    - Как там сборка [5000](build_number) для джобы [Анализ_безопасности](job_name)?
+    - Сборка [5100](build_number) задачи [Обновление_БД](job_name), что нового?
+    - Что можешь сказать о сборке [5200](build_number) джобы [Проверка_кода](job_name)?
+    - Что происходит с сборкой [5300](build_number) задачи [Тестирование_UI](job_name)?
+    - Какие новости по сборке [5400](build_number) джобы [Настройка_окружения](job_name)?
+    - Расскажи мне о сборке [5500](build_number) задачи [Функциональные_тесты](job_name)
+    - Какие данные у сборки [5600](build_number) джобы [Оптимизация_производительности](job_name)?
+    - Информация о сборке [5700](build_number) задачи [Нагрузочное_тестирование](job_name), пожалуйста
+    - Как успехи у сборки [5800](build_number) джобы [Публикация_результатов](job_name)?
+    - Что по сборке [5900](build_number) задачи [Регрессионное_тестирование](job_name)?
+    - Дай мне информацию о сборке [6000](build_number) джобы [Внедрение_новых_функций](job_name)
+    - Что там с сборкой [6100](build_number) задачи [Очистка_кеша](job_name)?
+    - Покажи мне состояние сборки [6200](build_number) джобы [Резервное_копирование](job_name)
+    - Каков статус сборки [6300](build_number) задачи [Обновление_сервера](job_name)?
+    - Расскажи об успешности билда [6400](build_number) джобы [Миграция_данных](job_name)
+    - Получи информацию о сборке [6500](build_number) задачи [Исправление_багов](job_name)
+    - Что происходит со сборкой [6600](build_number) джобы [Разработка_нового_фронтенда](job_name)?
+    - Дай мне данные о билде [6700](build_number) задачи [Интеграционное_тестирование](job_name)
+
+    - Как обстоят дела с билдом [6800](build_number) для джобы [Слияние_веток](job_name)?
+    - Билд [6900](build_number) задачи [Релиз_продукта](job_name), что нового?
+    - Что можешь сказать о билде [7000](build_number) джобы [Конфигурация_сервера](job_name)?
+    - Как там билд [7100](build_number) задачи [Деплой_на_тестовый](job_name)?
+
+- intent: get_job_build_console_output
+  examples: |
+    - Покажи консольный вывод сборки [backend_task](job_name) номер [4](build_number)
+    - Получи консольный лог для задачи [data_migration](job_name) с номером сборки [15](build_number)
+    - Покажи мне лог сборки [bug_fixes](job_name) номер [26](build_number)
+    - Хочу посмотреть консольный вывод для задачи [code_analysis](job_name) с номером [34](build_number)
+    - Получи лог сборки для задачи [server_update](job_name) номер [7](build_number)
+    - Дай мне консольный лог джобы [performance_testing](job_name) с номером [12](build_number)
+    - Покажи консольный вывод сборки задачи [api_integration](job_name) номер [21](build_number)
+    - Хочу увидеть лог сборки для задачи [cache_optimization](job_name) с номером [9](build_number)
+    - Дай мне лог сборки джобы [security_check](job_name) номер [18](build_number)
+    - Получи консольный вывод для джобы [ui_testing](job_name) с номером [24](build_number)
+    - Покажи мне консольный лог сборки задачи [feature_development](job_name) номер [30](build_number)
+    - Хочу посмотреть консольный вывод джобы [webhook_setup](job_name) с номером [13](build_number)
+    - Получи лог сборки задачи [framework_update](job_name) номер [29](build_number)
+    - Дай мне консольный лог для задачи [stats_collection](job_name) с номером [3](build_number)
+    - Покажи консольный вывод сборки джобы [tech_integration](job_name) номер [17](build_number)
+    - Хочу увидеть лог сборки джобы [compatibility_check](job_name) с номером [5](build_number)
+    - Получи консольный лог задачи [service_monitoring](job_name) номер [27](build_number)
+    - Дай мне консольный вывод для джобы [automation_process](job_name) с номером [11](build_number)
+    - Покажи мне лог сборки задачи [code_documentation](job_name) номер [14](build_number)
+    - Хочу посмотреть консольный вывод сборки задачи [security_enhancement](job_name) с номером [8](build_number)
+
+- intent: get_job_parameters
+  examples: |
+    - Покажи список параметров задачи [backend_task](job_name)
+    - Получи параметры для задачи [data_migration](job_name)
+    - Хочу увидеть параметры задачи [bug_fixes](job_name)
+    - Покажи мне параметры для задачи [code_analysis](job_name)
+    - Получи список параметров задачи [server_update](job_name)
+    - Дай мне список параметров джобы [performance_testing](job_name)
+    - Покажи параметры задачи [api_integration](job_name)
+    - Хочу узнать параметры задачи [cache_optimization](job_name)
+    - Дай мне параметры джобы [security_check](job_name)
+    - Получи список параметров для джобы [ui_testing](job_name)
+    - Покажи мне параметры задачи [feature_development](job_name)
+    - Хочу увидеть список параметров джобы [webhook_setup](job_name)
+    - Получи параметры задачи [framework_update](job_name)
+    - Дай мне список параметров для задачи [stats_collection](job_name)
+    - Покажи параметры джобы [tech_integration](job_name)
+    - Хочу узнать параметры джобы [compatibility_check](job_name)
+    - Получи список параметров задачи [service_monitoring](job_name)
+    - Дай мне параметры для джобы [automation_process](job_name)
+    - Покажи мне параметры задачи [code_documentation](job_name)
+    - Хочу увидеть параметры задачи [security_enhancement](job_name)
+
+- intent: get_job_parameter_value
+  examples: |
+    - Какое значение параметра [timeout](parameter_name) в задаче [backend_task](job_name)
+    - Получи значение параметра [version](parameter_name) для задачи [data_migration](job_name)
+    - Что за значение параметра [api_key](parameter_name) в задаче [bug_fixes](job_name)
+    - Покажи мне значение параметра [branch](parameter_name) для задачи [code_analysis](job_name)
+    - Получи значение параметра [memory_limit](parameter_name) задачи [server_update](job_name)
+    - Дай мне значение параметра [retry_count](parameter_name) джобы [performance_testing](job_name)
+    - Покажи значение параметра [environment](parameter_name) задачи [api_integration](job_name)
+    - Хочу узнать значение параметра [cache_size](parameter_name) задачи [cache_optimization](job_name)
+    - Дай мне значение параметра [security_level](parameter_name) джобы [security_check](job_name)
+    - Получи значение параметра [ui_version](parameter_name) для джобы [ui_testing](job_name)
+    - Покажи мне значение параметра [feature_flag](parameter_name) задачи [feature_development](job_name)
+    - Хочу увидеть значение параметра [webhook_url](parameter_name) джобы [webhook_setup](job_name)
+    - Получи значение параметра [framework_version](parameter_name) задачи [framework_update](job_name)
+    - Дай мне значение параметра [stats_interval](parameter_name) для задачи [stats_collection](job_name)
+    - Покажи значение параметра [integration_type](parameter_name) джобы [tech_integration](job_name)
+    - Хочу узнать значение параметра [compatibility_mode](parameter_name) джобы [compatibility_check](job_name)
+    - Получи значение параметра [monitoring_interval](parameter_name) задачи [service_monitoring](job_name)
+    - Дай мне значение параметра [automation_rate](parameter_name) для джобы [automation_process](job_name)
+    - Покажи мне значение параметра [documentation_format](parameter_name) задачи [code_documentation](job_name)
+    - Хочу увидеть значение параметра [security_algorithm](parameter_name) задачи [security_enhancement](job_name)

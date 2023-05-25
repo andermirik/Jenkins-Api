@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STT-TTS-NLU Client</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>STT-TTS-NLU Client</h1>
+        <button id="start-record-btn">Start Recording</button>
+        <button id="stop-record-btn" disabled>Stop Recording</button>
+        <audio id="player" controls></audio>
+        <p id="transcript"></p>
+        <p id="nlu-result"></p>
+    </div>
+    <script src="recorder.min.js"></script>
+    <script src="encoderWorker.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
